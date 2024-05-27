@@ -1,8 +1,12 @@
-import { Piece } from "../logic/Piece";
+// Components
+import Piece from "./Piece";
+// Styles
 import "./Board.css";
+// Logic
+import { GamePiece } from "../logic/GamePiece";
 
 interface Props {
-  ranksAndFiles: Array<Array<Piece>>;
+  ranksAndFiles: Array<Array<GamePiece>>;
 }
 
 export default function Board({ ranksAndFiles }: Props) {
@@ -17,14 +21,23 @@ export default function Board({ ranksAndFiles }: Props) {
             return (
               <div
                 className="square"
-                key={`${rankIndex}-${fileIndex}`}
-                onClick={() => Rune.actions.print()}
+                key={sq}
                 data-rank-even={rankIndex % 2 === 0}
                 data-file-even={fileIndex % 2 === 0}
-                data-piece={piece ? piece.type : undefined}
-                data-team={piece ? piece.team : undefined}
               >
-                <button className="piece">P</button>
+                {piece ? (
+                  <Piece
+                    team={"white"}
+                    type={"knight"}
+                    index={rankIndex * fileIndex}
+                  />
+                ) : (
+                  <Piece
+                    team={"white"}
+                    type={"pawn"}
+                    index={rankIndex * fileIndex}
+                  />
+                )}
               </div>
             );
           });

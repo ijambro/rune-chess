@@ -1,0 +1,86 @@
+/* 
+ * Piece styles
+ */
+
+button {
+  position: relative;
+  background: transparent;
+  /* border: 1.3vw solid #e6e6e620; */
+  border-width: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  margin: 0;
+
+  /* Font and color */
+  font-size: large;
+  color: blueviolet;
+}
+
+button:before {
+  position: absolute;
+  top: max(8%, 8px);
+  left: max(8%, 8px);
+  bottom: max(8%, 8px);
+  right: max(8%, 8px);
+
+  /* Content */
+  background-image: url(../assets/pieces/white/icons8-pawn-64.png);
+  content: "";
+
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: opacity 1s ease-out;
+}
+
+/* Animation for scaling up from 0 to 100:
+ * - Display all pieces on the board initially?
+ * - Add new piece to the captured pieces list
+ * - Transform a pawn to a queen 
+*/
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button[data-player="0"]:before {
+  background-image: url(./assets/x.svg);
+  animation: scale-in 0.2s ease-in-out;
+}
+
+button[data-player="1"]:before {
+  background-image: url(./assets/o.svg);
+  animation: scale-in 0.2s ease-in-out;
+}
+
+button:not([data-disabled]) {
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  button:not([data-disabled]):after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10%;
+    margin-left: -10%;
+    width: 20%;
+    border-radius: 50%;
+    background: #e6e6e6;
+    aspect-ratio: 1;
+    transition: all 0.15s ease-in-out;
+    scale: 0;
+  }
+
+  button:hover:after {
+    scale: 1;
+  }
+}
