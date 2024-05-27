@@ -1,0 +1,23 @@
+main {
+  background-color: pink !important;
+}
+
+/* 
+ * Board styles
+ * 
+ * TODO: Squares should be divs instead of buttons, then the pieces should be the buttons.
+ */
+
+#board {
+  width: 90vw;
+  max-width: min(90vh, 600px);
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  background-color: white;
+}
+
+button[data-rank-even="true"][data-file-even="false"],
+button[data-rank-even="false"][data-file-even="true"] {
+  background-color: black;
+}
