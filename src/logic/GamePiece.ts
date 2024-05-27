@@ -8,7 +8,7 @@ export type PieceType =
   | "queen"
   | "king";
 
-export class Piece {
+export class GamePiece {
   team: Team;
   type: PieceType;
   active: boolean;

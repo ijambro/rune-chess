@@ -1,5 +1,5 @@
 import { Move } from "../types";
-import { Piece } from "./Piece";
+import { GamePiece } from "./GamePiece";
 
 const W = 8,
   H = 8;
@@ -12,7 +12,7 @@ const W = 8,
  * Note: functions of this class are available to backend logic, but only its properties are available to the App.
  */
 export class Board {
-  ranksAndFiles: Array<Array<Piece>>;
+  ranksAndFiles: Array<Array<GamePiece>>;
 
   constructor() {
     console.log("Constructing Board");
