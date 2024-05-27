@@ -21,6 +21,7 @@ main {
   justify-content: space-around;
 }
 
+/* TODO: Move to .piece class, in a separate Piece.tsx component with Piece.css */
 button {
   position: relative;
   background: transparent;
@@ -30,6 +31,10 @@ button {
   aspect-ratio: 1;
   padding: 0;
   margin: 0;
+
+  /* Font and color */
+  font-size: large;
+  color: blueviolet;
 }
 
 button:before {
@@ -38,7 +43,11 @@ button:before {
   left: max(8%, 8px);
   bottom: max(8%, 8px);
   right: max(8%, 8px);
-  content: "!";
+
+  /* Content */
+  background-image: url(./assets/x.svg);
+  content: "";
+
   display: block;
   background-repeat: no-repeat;
   background-size: contain;

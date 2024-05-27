@@ -1,7 +1,3 @@
-main {
-  background-color: pink !important;
-}
-
 /* 
  * Board styles
  * 
@@ -17,7 +13,7 @@ main {
   background-color: white;
 }
 
-button[data-rank-even="true"][data-file-even="false"],
-button[data-rank-even="false"][data-file-even="true"] {
+.square[data-rank-even="true"][data-file-even="false"],
+.square[data-rank-even="false"][data-file-even="true"] {
   background-color: black;
 }

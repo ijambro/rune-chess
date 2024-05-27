@@ -15,14 +15,17 @@ export default function Board({ ranksAndFiles }: Props) {
             console.log("Mapping board square", sq, piece);
 
             return (
-              <button
+              <div
+                className="square"
                 key={`${rankIndex}-${fileIndex}`}
                 onClick={() => Rune.actions.print()}
                 data-rank-even={rankIndex % 2 === 0}
                 data-file-even={fileIndex % 2 === 0}
                 data-piece={piece ? piece.type : undefined}
                 data-team={piece ? piece.team : undefined}
-              />
+              >
+                <button className="piece">P</button>
+              </div>
             );
           });
         }
