@@ -20,9 +20,7 @@ export default function Piece({ team, type, index }: Props) {
       onClick={() => Rune.actions.print()}
       data-team={team}
       data-piece-type={type}
-    >
-      P
-    </button>
+    />
   );
 }
 

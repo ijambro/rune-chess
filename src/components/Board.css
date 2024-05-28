@@ -11,6 +11,11 @@
   background-color: white;
 }
 
+.square {
+  /* justify-content: center; */
+  align-content: end;
+}
+
 .square[data-rank-even="true"][data-file-even="false"],
 .square[data-rank-even="false"][data-file-even="true"] {
   background-color: black;

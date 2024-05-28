@@ -3,28 +3,57 @@
  */
 
 button {
-  position: relative;
+  /* position: relative; */
   background: transparent;
   /* border: 1.3vw solid #e6e6e620; */
   border-width: 0;
   width: 100%;
   aspect-ratio: 1;
-  padding: 0;
-  margin: 0;
+  /* padding: 0; */
+  /* margin: 0; */
 
   /* Font and color */
   font-size: large;
   color: blueviolet;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  /* background-image: url(../assets/pieces/white/icons8-pawn-64.png); */
 }
 
-button:before {
+button[data-team="white"][data-piece-type="pawn"] {
+  background-image: url(../assets/pieces/white/icons8-pawn-64.png);
+  max-height: 70%; /* Shrink the pawn, otherwise it looks too similar to a bishop */
+}
+
+button[data-team="white"][data-piece-type="rook"] {
+  background-image: url(../assets/pieces/white/icons8-rook-64.png);
+}
+
+button[data-team="white"][data-piece-type="knight"] {
+  background-image: url(../assets/pieces/white/icons8-knight-64.png);
+}
+
+button[data-team="white"][data-piece-type="bishop"] {
+  background-image: url(../assets/pieces/white/icons8-bishop-64.png);
+}
+
+button[data-team="white"][data-piece-type="queen"] {
+  background-image: url(../assets/pieces/white/icons8-queen-64.png);
+}
+
+button[data-team="white"][data-piece-type="king"] {
+  background-image: url(../assets/pieces/white/icons8-king-64.png);
+}
+/* button:before {
   position: absolute;
   top: max(8%, 8px);
   left: max(8%, 8px);
   bottom: max(8%, 8px);
   right: max(8%, 8px);
 
-  /* Content */
   background-image: url(../assets/pieces/white/icons8-pawn-64.png);
   content: "";
 
@@ -33,7 +62,7 @@ button:before {
   background-size: contain;
   background-position: center;
   transition: opacity 1s ease-out;
-}
+} */
 
 /* Animation for scaling up from 0 to 100:
  * - Display all pieces on the board initially?
