@@ -31,13 +31,7 @@ export default function Board({ ranksAndFiles }: Props) {
                     type={piece.type}
                     index={rankIndex * fileIndex}
                   />
-                ) : (
-                  <Piece
-                    team={"white"}
-                    type={"queen"}
-                    index={rankIndex * fileIndex}
-                  />
-                )}
+                ) : null}
               </div>
             );
           });

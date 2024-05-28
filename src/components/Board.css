@@ -14,9 +14,10 @@
 .square {
   /* justify-content: center; */
   align-content: end;
+  aspect-ratio: 1;
 }
 
 .square[data-rank-even="true"][data-file-even="false"],
 .square[data-rank-even="false"][data-file-even="true"] {
-  background-color: black;
+  background-color: #333333;
 }

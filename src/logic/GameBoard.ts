@@ -25,10 +25,36 @@ export class GameBoard {
   }
 
   setupPieces() {
+    // Pawns
     for (let f = 0; f < W; f++) {
       this.ranksAndFiles[1][f] = new GamePiece("black", "pawn");
       this.ranksAndFiles[6][f] = new GamePiece("white", "pawn");
     }
+    // Rooks
+    this.ranksAndFiles[0][0] = new GamePiece("black", "rook");
+    this.ranksAndFiles[0][7] = new GamePiece("black", "rook");
+    this.ranksAndFiles[7][0] = new GamePiece("white", "rook");
+    this.ranksAndFiles[7][7] = new GamePiece("white", "rook");
+
+    // Knights
+    this.ranksAndFiles[0][1] = new GamePiece("black", "knight");
+    this.ranksAndFiles[0][6] = new GamePiece("black", "knight");
+    this.ranksAndFiles[7][1] = new GamePiece("white", "knight");
+    this.ranksAndFiles[7][6] = new GamePiece("white", "knight");
+
+    // Bishops
+    this.ranksAndFiles[0][2] = new GamePiece("black", "bishop");
+    this.ranksAndFiles[0][5] = new GamePiece("black", "bishop");
+    this.ranksAndFiles[7][2] = new GamePiece("white", "bishop");
+    this.ranksAndFiles[7][5] = new GamePiece("white", "bishop");
+
+    // Queens
+    this.ranksAndFiles[0][3] = new GamePiece("black", "queen");
+    this.ranksAndFiles[7][3] = new GamePiece("white", "queen");
+
+    // Kings
+    this.ranksAndFiles[0][4] = new GamePiece("black", "king");
+    this.ranksAndFiles[7][4] = new GamePiece("white", "king");
   }
 
   toString() {
@@ -36,7 +62,7 @@ export class GameBoard {
     for (let r = 0; r < H; r++) {
       for (let f = 0; f < W; f++) {
         const piece = this.ranksAndFiles[r][f];
-        const pieceStr = piece ? piece.toString() : "-?-";
+        const pieceStr = piece ? piece.toString() : "[ ]";
         s += pieceStr + "\t";
       }
       s += "\n";
