@@ -28,13 +28,13 @@ export default function Board({ ranksAndFiles }: Props) {
                 {piece ? (
                   <Piece
                     team={"white"}
-                    type={"knight"}
+                    type={piece.type}
                     index={rankIndex * fileIndex}
                   />
                 ) : (
                   <Piece
                     team={"white"}
-                    type={"pawn"}
+                    type={"queen"}
                     index={rankIndex * fileIndex}
                   />
                 )}

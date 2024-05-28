@@ -1,4 +1,4 @@
-import { Board } from "./Board";
+import { GameBoard } from "./GameBoard";
 
 // function findWinningCombo(cells: Cells) {
 //   return (
@@ -21,7 +21,7 @@ Rune.initLogic({
   minPlayers: 2,
   maxPlayers: 2,
   setup: (allPlayerIds) => ({
-    board: new Board(),
+    board: new GameBoard(),
     // cells: new Array(9).fill(null),
     // winCombo: null,
     lastMovePlayerId: null,

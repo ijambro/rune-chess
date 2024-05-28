@@ -5,20 +5,29 @@ const W = 8,
   H = 8;
 
 /**
- * Board class
+ * GameBoard class
  *
  * Define an 8x8 array.  Track where each player's pieces exist on the board.
  *
  * Note: functions of this class are available to backend logic, but only its properties are available to the App.
  */
-export class Board {
+export class GameBoard {
   ranksAndFiles: Array<Array<GamePiece>>;
 
   constructor() {
-    console.log("Constructing Board");
+    console.log("Constructing GameBoard");
     this.ranksAndFiles = new Array(H);
     for (let i = 0; i < H; i++) {
       this.ranksAndFiles[i] = new Array(W);
+    }
+
+    this.setupPieces();
+  }
+
+  setupPieces() {
+    for (let f = 0; f < W; f++) {
+      this.ranksAndFiles[1][f] = new GamePiece("black", "pawn");
+      this.ranksAndFiles[6][f] = new GamePiece("white", "pawn");
     }
   }
 

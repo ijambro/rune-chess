@@ -1,5 +1,5 @@
 import type { PlayerId, RuneClient } from "rune-games-sdk/multiplayer";
-import { Board } from "./logic/Board";
+import { GameBoard } from "./logic/GameBoard";
 
 export interface Move {
   rFrom: number;
@@ -18,7 +18,7 @@ export interface Move {
  * - Pieces captured by each Player
  */
 export interface GameState {
-  board: Board;
+  board: GameBoard;
 
   lastMovePlayerId: PlayerId | null;
   playerIds: PlayerId[];
